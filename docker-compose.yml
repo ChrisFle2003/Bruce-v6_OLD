@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: bruce-postgres
+    environment:
+      POSTGRES_DB: bruce_knowledge
+      POSTGRES_USER: bruce
+      POSTGRES_PASSWORD: dev_secret
+    ports:
+      - "5433:5433"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./knowledge/migrations:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bruce -d bruce_knowledge"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
