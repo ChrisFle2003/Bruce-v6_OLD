@@ -1,0 +1,22 @@
+# PostgreSQL Client
+psycopg2-binary==2.9.9
+
+# Numerical Computing
+numpy==1.24.3
+
+# Ollama Python Client
+ollama==0.1.9
+
+# Web Framework (for future REST API)
+fastapi==0.104.1
+uvicorn==0.24.0
+
+# Data Validation
+pydantic==2.4.2
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+
+# Development
+python-dotenv==1.0.0
